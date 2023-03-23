@@ -1,7 +1,7 @@
 # large-language-model-chats
 Chats recorded by using Large Language models
 
-- [ChatGPT/BARD 1] (./chatgpt-bard-1.md)
+- [ChatGPT/BARD 1](./chatgpt-bard-1.md)
 - [ChatGPT/BARD 1](./chatgpt-bard-1.md)
 - [ChatGPT/BARD 2](./chatgpt-bard-2.md)
 - [ChatGPT/BARD 3](./chatgpt-bard-3.md)
