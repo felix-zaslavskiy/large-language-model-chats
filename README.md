@@ -12,3 +12,5 @@ Chats recorded by using Large Language models
 Ideas for future exploration:
 * Conversation between ChatGPT and BARD where ChatGPT is teacher and BARD is student.
 * Code generation like in 15 where we try to get ChatGPT to create as eleborate python code as it possibly can.
+* ChatGPT talks to BING, BING talk to BARD?
+* ChatGPT Given a news article identify logical falacies or factual errors by the writer. 
