@@ -15,3 +15,6 @@ Ideas for future exploration:
 * Execute print loop but where ChatGPT is given a goal to accomplish. Maybe even simple goal like do calculations correctly.
 * ChatGPT talks to BING, BING talk to BARD?
 * ChatGPT Given a news article identify logical falacies or factual errors by the writer. 
+
+TODO:
+Create script so that outputs from AI an be more easily formatted into MD files.
