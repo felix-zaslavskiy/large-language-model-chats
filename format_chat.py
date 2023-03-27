@@ -92,9 +92,8 @@ def transform_lines(lines):
             inside_blockquote = True
         elif line.strip() == "":
             if inside_blockquote:
-                output_lines.append(">\n" + line)
-            else:
-                output_lines.append(line)
+                output_lines.append(">\n")
+            output_lines.append(line)
             inside_blockquote = False
         else:
             if inside_blockquote:
@@ -102,6 +101,8 @@ def transform_lines(lines):
             else:
                 output_lines.append(line)
     return output_lines
+
+
 
 
 def process_file(filename):
