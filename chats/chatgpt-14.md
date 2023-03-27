@@ -10,7 +10,7 @@
 > Here is how it works:
 > 
 > ChatGPT will produce some python code. 
->Only the code without any extra explanations.
+> Only the code without any extra explanations.
 > I will execute that python code and record the text output.
 > I will copy/paste that output into the chatbox input.
 > Now it is your turn to provide me the next output of python code.
@@ -21,11 +21,11 @@
 > 
 > Sure, I'd be happy to play this game with you! Here is the first code:
 > 
-```
-print("Hello, what is your name?")
-name = input()
-print("Nice to meet you, " + name + "!")
-```
+> ```
+> print("Hello, what is your name?")
+> name = input()
+> print("Nice to meet you, " + name + "!")
+> ```
 > 
 > Please execute this code and provide the text output as a reply.
 
