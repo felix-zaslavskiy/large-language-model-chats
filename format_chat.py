@@ -68,7 +68,10 @@ def process_file(filename):
                 output_lines.append(line.rstrip() + "\n>\n")
                 inside_blockquote = True
             elif line.strip() == "":
-                output_lines.append(line)
+                if inside_blockquote:
+                    output_lines.append(">\n" + line)
+                else:
+                    output_lines.append(line)
                 inside_blockquote = False
             else:
                 if inside_blockquote:
@@ -96,3 +99,4 @@ if __name__ == "__main__":
         sys.exit(1)
 
     process_file(filename)
+
