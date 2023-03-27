@@ -2,8 +2,18 @@
 """
 Python program will take a filename on command line.
 Load the filename into memory. If file not found produce error.
-The format for the file is described next.
-Header of the file like so:
+"""
+
+import sys
+import os
+
+
+"""
+Function transform_lines() takes a list of lines (ending with \n).
+Function will transform these lines into a valid Markdown format.
+Start with header section
+After > **User1** the templated section start. The example is below:
+
 # ChatGPT4 - Some description goes here - 16
 
 * **Date of conversation:** March 26, 2023
@@ -25,10 +35,9 @@ Text text text text
 > **ChatGPT**
 Text text text...
 
-and on to continue alternating between users.
+continue alternating between users.
 
-The text in the file will be transformed to valid Markdown format.
-Text will be added to the blockquote of the user or chatbot it is associate with.
+Text lines will be added to the blockquote of the user or chatbot it is associate with.
 For example:
 > **ChatGPT**
 Text text text.
@@ -44,10 +53,56 @@ Becomes:
 
 Note the extra > after the > **ChatGPT** line
 
-"""
+For example 
+> **ChatGPT**
+Text1
 
-import sys
-import os
+text2
+
+> **User**
+text3
+
+> **ChatGPT**
+
+Becomes:
+> **ChatGPT**
+> Text1
+>
+> text2
+
+> **User**
+> text3
+
+> **ChatGPT**
+Return the transformed text as a list of lines.
+"""
+def transform_lines(lines):
+    output_lines = []
+    inside_blockquote = False
+    header = True
+    for line in lines:
+        if header:
+            output_lines.append(line)
+            if line.startswith("> **"):
+                header = False
+                output_lines.append(">\n")
+                inside_blockquote = True
+        elif line.startswith("> **"):
+            output_lines.append(line.rstrip() + "\n>\n")
+            inside_blockquote = True
+        elif line.strip() == "":
+            if inside_blockquote:
+                output_lines.append(">\n" + line)
+            else:
+                output_lines.append(line)
+            inside_blockquote = False
+        else:
+            if inside_blockquote:
+                output_lines.append("> " + line)
+            else:
+                output_lines.append(line)
+    return output_lines
+
 
 def process_file(filename):
     try:
@@ -55,29 +110,8 @@ def process_file(filename):
             lines = file.readlines()
 
         output_lines = []
-        inside_blockquote = False
-        header = True
-        for line in lines:
-            if header:
-                output_lines.append(line)
-                if line.startswith("> **"):
-                    header = False
-                    output_lines.append(">\n")
-                    inside_blockquote = True
-            elif line.startswith("> **"):
-                output_lines.append(line.rstrip() + "\n>\n")
-                inside_blockquote = True
-            elif line.strip() == "":
-                if inside_blockquote:
-                    output_lines.append(">\n" + line)
-                else:
-                    output_lines.append(line)
-                inside_blockquote = False
-            else:
-                if inside_blockquote:
-                    output_lines.append("> " + line)
-                else:
-                    output_lines.append(line)
+
+        output_lines =  transform_lines(lines)
 
         with open(filename, "w") as output_file:
             output_file.writelines(output_lines)

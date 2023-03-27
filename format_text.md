@@ -9,9 +9,9 @@ Text text text text
 > **ChatGPT**
 Text text text.
 
-text text text text
+Text text text text
 
-text text..
+Text text..
 
 > **User1**
 Text text text text
