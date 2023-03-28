@@ -78,28 +78,30 @@ Return the transformed text as a list of lines.
 """
 def transform_lines(lines):
     output_lines = []
+    inside_header = True
     inside_blockquote = False
-    header = True
+
     for line in lines:
-        if header:
+        if inside_header:
             output_lines.append(line)
             if line.startswith("> **"):
-                header = False
-                output_lines.append(">\n")
+                inside_header = False
                 inside_blockquote = True
-        elif line.startswith("> **"):
-            output_lines.append(line.rstrip() + "\n>\n")
-            inside_blockquote = True
-        elif line.strip() == "":
-            if inside_blockquote:
                 output_lines.append(">\n")
-            output_lines.append(line)
-            inside_blockquote = False
-        else:
-            if inside_blockquote:
-                output_lines.append("> " + line)
-            else:
+        elif inside_blockquote:
+            if line.startswith("> **"):
+                if not output_lines[-1].startswith("> "):
+                    output_lines.append(">\n")
                 output_lines.append(line)
+                output_lines.append(">\n")
+            else:
+                if line.strip():
+                    output_lines.append("> " + line)
+                else:
+                    if not output_lines[-1].startswith("> "):
+                        output_lines.append(">\n")
+                    output_lines.append("> \n")
+
     return output_lines
 
 
