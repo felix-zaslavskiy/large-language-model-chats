@@ -111,8 +111,6 @@ def process_file(filename):
         with open(filename, "r") as file:
             lines = file.readlines()
 
-        output_lines = []
-
         output_lines =  transform_lines(lines)
 
         with open(filename, "w") as output_file:
