@@ -79,5 +79,71 @@ class TestTransformLines(unittest.TestCase):
         input_result = "".join(transform_lines(input_lines))
         self.assertEqual(input_result, expected_output)
 
+    def test_single_user_single_line(self):
+        input_lines = [
+            "> **User1**\n",
+            "Text text text\n"
+        ]
+        expected_output = [
+            "> **User1**\n",
+            ">\n",
+            "> Text text text\n"
+        ]
+        expected_output = "".join(expected_output)
+        input_result = "".join(transform_lines(input_lines))
+        self.assertEqual(input_result, expected_output)
+
+    def test_consecutive_empty_lines(self):
+        input_lines = [
+            "> **User1**\n",
+            "Text text text\n",
+            "\n",
+            "\n",
+            "Text text text\n"
+        ]
+        expected_output = [
+            "> **User1**\n",
+            ">\n",
+            "> Text text text\n",
+            ">\n",
+            ">\n",
+            "> Text text text\n"
+        ]
+        expected_output = "".join(expected_output)
+        input_result = "".join(transform_lines(input_lines))
+        self.assertEqual(input_result, expected_output)
+
+    def test_multiple_users_various_patterns(self):
+        input_lines = [
+            "> **User1**\n",
+            "Text text text\n",
+            "\n",
+            "Text text text\n",
+            "> **User2**\n",
+            "Text text text text\n",
+            "> **User1**\n",
+            "Text text text\n",
+            "Text text text\n"
+        ]
+        expected_output = [
+            "> **User1**\n",
+            ">\n",
+            "> Text text text\n",
+            ">\n",
+            "> Text text text\n",
+            "\n",
+            "> **User2**\n",
+            ">\n",
+            "> Text text text text\n",
+            "\n",
+            "> **User1**\n",
+            ">\n",
+            "> Text text text\n",
+            "> Text text text\n"
+        ]
+        expected_output = "".join(expected_output)
+        input_result = "".join(transform_lines(input_lines))
+        self.assertEqual(input_result, expected_output)
+
 if __name__ == '__main__':
     unittest.main()

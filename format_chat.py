@@ -90,8 +90,10 @@ def transform_lines(lines):
                 output_lines.append(">\n")
         elif inside_blockquote:
             if line.startswith("> **"):
-                if not output_lines[-1].startswith(">"):
+                if not output_lines[-1].startswith("> "):
                     output_lines.append(">\n")
+                if not output_lines[-1] == "\n":
+                    output_lines.append("\n")
                 output_lines.append(line)
                 output_lines.append(">\n")
             else:
@@ -101,7 +103,6 @@ def transform_lines(lines):
                     output_lines.append(">\n")
 
     return output_lines
-
 
 
 
