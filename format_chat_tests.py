@@ -42,9 +42,9 @@ class TestTransformLines(unittest.TestCase):
             "> **ChatGPT**\n",
             ">\n",
             "> Text text text.\n",
-            "> \n",
+            ">\n",
             "> Text text text text\n",
-            "> \n",
+            ">\n",
             "> Text text..\n",
         ]
         expected_output = "".join(expected_output)
@@ -65,7 +65,7 @@ class TestTransformLines(unittest.TestCase):
             "> **ChatGPT**\n",
             ">\n",
             "> Text1\n",
-            "> \n",
+            ">\n",
             "> text2\n",
             "\n",
             "> **User**\n",
