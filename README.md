@@ -1,4 +1,10 @@
-# large-language-model-chats
+# Large Language Model Chats
+
+As LLM become more and more sophisticated the need to study their capabilities becomes evermore pressing. This is a repository is an emerging attempt to start recording intersting an novel interactions with LLMs to try to understand their full range capabilities. The only limit on the experiments to perform is limited by human and AI imaginations.
+
+Repository includes some tools to make recording chat logs a bit easier on people.
+If you are interested in contributing feel free to open a pull request. All logs should be in the standard chat format in Markdown format (see any of them for examples).
+
 Chats recorded by using Large Language models
 
 - [ChatGPT/BARD Conversation 1](chats/chatgpt-bard-1.md)
