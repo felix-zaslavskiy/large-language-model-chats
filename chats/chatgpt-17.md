@@ -2,20 +2,16 @@
 
 * **Date of conversation:** March 28, 2023
 * Testing out Algorithm and Data Structure Knowledge
-* 
 * As the Human I executed the code that ChatGPT4 generated to double-check its correctness.
-* 
 * The code was mostly correct but when ChatGPT executed it's own code it made errors.
-* 
-* for tree printing ChatGPT was able to print the tree but it could not generate correct print function.
-* 
+* For tree printing ChatGPT was able to print the tree but it could not generate correct print function.
 * ChatGPT could not execute a long running function with intermediate steps correctly.
-* 
 * ChatGPT could not create correct code for last task of finding correct longest path between any two leaf nodes in BST.
 
 > **Human**
 >
 > Let us do some algorithm and data structure practice. You are given a BST in following format. A set of rows where each row defines a node like "root, left, right" and in case of terminal leaf nodes the value "None" will be used:
+> ```
 > 73,  51,  85
 > 51,  48,  57
 > 48,  None,  None
@@ -26,6 +22,7 @@
 > 85,  82,  96
 > 82,  None,  None
 > 96,  None,  None
+> ```
 
 > **ChatGPT**
 >
