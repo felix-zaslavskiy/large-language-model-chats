@@ -27,7 +27,7 @@ TODO:
 Create script so that outputs from AI an be more easily formatted into MD files.
 
 How to fill out the chat template:
-<blockquote>
+```
 # ChatGPT4 - <Chat title> - <number of chat>
 
 * **Date of conversation:** March 26, 2023
@@ -48,8 +48,8 @@ Text text text text...
 > **ChatGPT**
 Text text text...
 
-</blockquote>
+```
 see chat_template.md 
   
 To turn template into properly formatted markdown:
-Run> format_template.py filename.md 
+Run> format_chate.py chats/your_new_chat.md
