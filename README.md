@@ -15,6 +15,7 @@ Chats recorded by using Large Language models
 - [ChatGPT3.5 See if it will code in loop 14](chats/chatgpt-14.md)
 - [ChatGPT4 See if it will code in loop 15](chats/chatgpt-15.md)
 - [ChatGPT4 ideas analysis 16](chats/chatgpt-16.md)
+- [ChatGPT computer science stuff 17](chats/chatgpt-17.md)
 
 Ideas for future exploration:
 * Conversation between ChatGPT and BARD where ChatGPT is teacher and BARD is student.
