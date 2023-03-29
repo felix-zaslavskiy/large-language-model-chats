@@ -33,7 +33,7 @@ How to fill out the chat template:
 * **Date of conversation:** March 26, 2023
 * <extra notes>
 
-> **User1**
+> **Human**
 Text text text text...
 
 > **ChatGPT**
@@ -42,7 +42,7 @@ Text text text text
 
 Text text..
 
-> **User1**
+> **Human**
 Text text text text...
 
 > **ChatGPT**
