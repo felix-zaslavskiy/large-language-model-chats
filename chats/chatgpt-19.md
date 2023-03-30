@@ -3,6 +3,7 @@
 * **Date of conversation:** March 29, 2023
 * The random tree example was randomly generated using python code and checked for correctness.
 * All the tasks would be trivial for a human if given pen and paper to keep track of the tree.
+* I was expecting GPT4 to do almost perfectly on this BST but to my surprise it gave inaccurate answers on two basic questions about the BST but corrected on followup.
 
 For reference here is the correct tree structure printed out by python code:
 ```
