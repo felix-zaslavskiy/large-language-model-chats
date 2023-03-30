@@ -77,11 +77,16 @@ Becomes:
 Return the transformed text as a list of lines.
 """
 def transform_lines(lines):
+    def remove_consecutive_strings(strings):
+        while strings and strings[-1] == ">\n":
+            strings.pop()
+        return strings
+
     output_lines = []
     inside_header = True
     inside_blockquote = False
 
-    for line in lines:
+    for idx, line in enumerate(lines):
         if inside_header:
             output_lines.append(line)
             if line.startswith("> **"):
@@ -90,8 +95,9 @@ def transform_lines(lines):
                 output_lines.append(">\n")
         elif inside_blockquote:
             if line.startswith("> **"):
-                if not output_lines[-1].startswith("> "):
-                    output_lines.append(">\n")
+                # Strip off any consecutive ">\n" at the end of previous section
+                remove_consecutive_strings(output_lines)
+
                 if not output_lines[-1] == "\n":
                     output_lines.append("\n")
                 output_lines.append(line)
@@ -102,6 +108,8 @@ def transform_lines(lines):
                 else:
                     output_lines.append(">\n")
 
+    # Strip off any consecutive ">\n" at the end of previous section
+    remove_consecutive_strings(output_lines)
     return output_lines
 
 

@@ -72,8 +72,7 @@ class TestTransformLines(unittest.TestCase):
             ">\n",
             "> text3\n",
             "\n",
-            "> **ChatGPT**\n",
-            ">\n",
+            "> **ChatGPT**\n"
         ]
         expected_output = "".join(expected_output)
         input_result = "".join(transform_lines(input_lines))
@@ -108,6 +107,59 @@ class TestTransformLines(unittest.TestCase):
             ">\n",
             ">\n",
             "> Text text text\n"
+        ]
+        expected_output = "".join(expected_output)
+        input_result = "".join(transform_lines(input_lines))
+        self.assertEqual(input_result, expected_output)
+
+    def test_consecutive_empty_lines(self):
+        input_lines = [
+            "> **User1**\n",
+            "Text text text\n",
+            "\n",
+            "\n",
+        ]
+        expected_output = [
+            "> **User1**\n",
+            ">\n",
+            "> Text text text\n",
+        ]
+        expected_output = "".join(expected_output)
+        input_result = "".join(transform_lines(input_lines))
+        self.assertEqual(input_result, expected_output)
+
+    def test_consecutive_empty_lines2(self):
+        input_lines = [
+            "> **User1**\n",
+            "Text text text\n",
+            "\n",
+        ]
+        expected_output = [
+            "> **User1**\n",
+            ">\n",
+            "> Text text text\n",
+        ]
+        expected_output = "".join(expected_output)
+        input_result = "".join(transform_lines(input_lines))
+        self.assertEqual(input_result, expected_output)
+
+    def test_consecutive_empty_lines3(self):
+        input_lines = [
+            "> **User1**\n",
+            "Text text text\n",
+            "\n",
+            "> **User2**\n",
+            "Text text text\n",
+            "\n",
+        ]
+        expected_output = [
+            "> **User1**\n",
+            ">\n",
+            "> Text text text\n",
+            "\n"
+            "> **User2**\n",
+            ">\n",
+            "> Text text text\n",
         ]
         expected_output = "".join(expected_output)
         input_result = "".join(transform_lines(input_lines))
