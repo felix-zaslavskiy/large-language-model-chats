@@ -18,6 +18,7 @@ Chats recorded by using Large Language models
 - [ChatGPT4 Computer science - Working with Binary Search Trees 17](chats/chatgpt-17.md)
 - [ChatGPT4 Manipulate Binary Search Tree of 20 items. 18](chats/chatgpt-18.md)
 - [ChatGPT4 Manipulate Binary Search Tree of 10 items. 19](chats/chatgpt-19.md)
+- [ChatGPT4 GPT4 gives Turing Test to itself. 20](chats/chatgpt-20.md)
 
 Ideas for future exploration:
 * Conversation between ChatGPT and BARD where ChatGPT is teacher and BARD is student.
